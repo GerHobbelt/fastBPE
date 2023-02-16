@@ -12,13 +12,20 @@
 #include <stdio.h>
 #include <string>
 #include <cstring>
-#include <sys/mman.h>
 #include <sys/stat.h>
 #include <thread>
-#include <unistd.h> // ftruncate
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+
+#if !deefined(_MSC_VER)
+#include <sys/mman.h>
+#include <unistd.h> // ftruncate
+#else
+#include <io.h>
+
+typedef int mode_t;
+#endif
 
 
 namespace fastBPE {
