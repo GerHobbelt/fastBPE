@@ -18,7 +18,7 @@
 #include <unordered_set>
 #include <vector>
 
-#if !deefined(_MSC_VER)
+#if !defined(_MSC_VER)
 #include <sys/mman.h>
 #include <unistd.h> // ftruncate
 #else
